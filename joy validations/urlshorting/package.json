@@ -1,0 +1,19 @@
+{
+  "name": "urlshorting",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nanoid": "^4.0.2",
+    "nodemon": "^2.0.22"
+  },
+  "devDependencies": {},
+  "description": ""
+}
