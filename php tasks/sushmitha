@@ -1,0 +1,237 @@
+const searchitem=()=>{
+      return new Promise((resolve, reject)=>{
+          const isCategoryFound=mart.find(eachCategory=>eachCategory.category===categoryOfItem);
+          if(isCategoryFound!==undefined){
+              const isItemFound=isCategoryFound.items.includes(item);
+              if(isItemFound){
+                  resolve("Item Found")
+              }else{
+                  reject("Item Not Found");
+              }
+          }else{
+              reject("Category Not Found");
+          }
+      });
+  };
+  const myPromise=async()=>{
+      try {
+          const itemStatus=await searchitem();
+          console.log(itemStatus);
+      }catch(error){
+          console.log(error);
+      }
+  };
+  myPromise();
+  /* Write your code here */
+}
+
+
+
+
+
+function main() {
+  const isGrassTrimmerFound = JSON.parse(readLine());
+  const isWaterHosePipeFound = JSON.parse(readLine());
+
+  /* Write your code here */
+
+  const cutting = () => {
+      return new Promise ((resolve,rejected)=> {
+          if (isGrassTrimmerFound){
+              resolve("Grass Trimmed")
+          } else {
+              rejected("Grass Trimmer Not Found")
+          }
+      })
+  }
+  const cleaning = () => {
+      return new Promise((resolve)=> {
+          resolve("Garden Cleaned")
+      })
+  }
+  const watering = () => {
+      return new Promise((resolve,rejected) => {
+          isWaterHosePipeFound ?resolve("Watered Plants") :rejected("Water Hose Pipe Not Found")
+      })
+  }
+
+  const myPromise = async () => {
+    try {
+        const task1 = await cutting();
+        console.log(task1)
+        const task2 = await cleaning();
+        console.log(task2)
+        const task3 = await watering();
+        console.log(task3)
+     
+      /* Write your code here */
+      
+    } catch(error) {
+        console.log(error)
+
+      /* Write your code here */
+      
+    }
+  };
+  
+  
+  myPromise();
+}
+
+
+"use strict";
+
+process.stdin.resume();
+process.stdin.setEncoding("utf-8");
+
+let inputString = "";
+let currentLine = 0;
+
+process.stdin.on("data", (inputStdin) => {
+  inputString += inputStdin;
+});
+
+process.stdin.on("end", (_) => {
+  inputString = inputString.trim().split("\n").map((str) => str.trim());
+  main();
+});
+
+function readLine() {
+  return inputString[currentLine++];
+}
+
+/* Please do not modify anything above this line */
+
+function main() {
+  const inputString = readLine();
+  const vowels = ['A', 'E', 'I', 'O', 'U'];
+  
+  let upCasStr=inputString.toUpperCase()
+  let len= upCasStr.length
+  let sliced=upCasStr.slice(len-1)
+  if(vowels.includes(sliced)){
+      console.log(true)
+  }else{
+      console.log(false)
+  }
+  
+  /* Write your code here */
+}
+
+
+
+function main() {
+  const inputString = readLine();
+  const separator = readLine();
+  const replaceString = readLine();
+  
+  let str=inputString.split(separator);
+  let res=str.map(each=>each.length>7?(each=replaceString):each=each)
+  console.log(...res);
+  /* Write your code here */
+
+
+
+app.js
+import logo from './logo.svg';
+import './App.css';
+
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
+}
+
+export default App;
+
+}
+
+
+class.js
+import './App.css'
+import React from 'react'
+
+
+class MyClass extends React.Component{
+    constructor(){
+        super()
+        this.state={count:0}
+    }
+    myClick =()=>{
+        this.setState({count:this.state.count+1})
+    }
+    render(){
+        return<><div>
+        <div className="ClickCounter">
+        <h1> Click Counter in class Component</h1>
+        <p> No of clicks :{this.state.count}</p>
+        <button className="Button" onClick ={this.myClick}  > Click ME :) </button>
+        </div>
+        </div>
+    </>
+    }
+}
+export default  MyClass;
+ 
+
+function.js
+import './App.css'
+let noclicks=document.getElementById("clicks").textContent;
+
+function Mycode(){
+    const id=()=>{
+        noclicks=parseInt(noclicks)+5;
+        document.getElementById("clicks").textContent=noclicks;
+    }
+    return(
+        
+        <div>
+            <div className="App-header">
+        <img src={"https://res.cloudinary.com/dswhesdgv/image/upload/v1659604577/samples/food/fish-vegetables.jpg"} className="App-image" alt="" />
+        <span className="para">Tomato Resturent</span>
+        <div className="Login">
+          <span > Login </span>
+          <span> Sign Up</span>
+        </div>
+      </div>
+      <div className="ClickCounter">
+        <h1> Click Counter</h1>
+        <p> No Of Click: <span id="clicks"> 0 </span></p>
+        <button className="Button" onClick={id}> Click ME :) </button>
+      </div>
+        </div>
+    )
+}
+export default Mycode; 
+
+index.js
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+
+
+

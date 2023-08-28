@@ -1,0 +1,19 @@
+{
+  "name": "nodesequelize",
+  "version": "1.0.0",
+  "description": "learning sequelize with node and postgresql",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm start"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "sushmithaadapa",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "nodemon": "^3.0.1",
+    "sequelize": "^6.32.1"
+  }
+}

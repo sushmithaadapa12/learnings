@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/2a9e17dbf7.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="background-color:rgb(19, 17, 17); height:100vh; background-size:cover; display:flex; flex-direction:column; align-items: center;">
+        <div style="background-color:white; margin:15%; border-radius:10px; text-align:center; padding:10px; ">
+            <i class="fa-solid fa-sun"> </i>
+            <h1>Weather Report</h1>
+            <h2>Kakinada , IN</h2>
+            <span id="day"></span> | <span id="date"></span>
+            <h3 id="time"></h3>
+            <h2>24.46°C</h2>
+        </div>
+    </div>
+    <script>
+        let curdate= document.getElementById("date");
+        let currday= document.getElementById("day");
+        let curtime= document.getElementById("time");
+        let getday=()=>{
+            var day= new Array(7);
+            day[0] = "Sun";
+            day[1] = "Mon";
+            day[2] = "Tues";
+            day[3] = "Wednes";
+            day[4] = "Thrus";
+            day[5] = "Fri";
+            day[6] = "Satur";
+            let currdatetime= new Date();
+            return(day[currdatetime.getDay()]);
+        };
+        const getmonth= ()=>{
+            var months= ["January","February","March","April","May","June","July",
+            "August","September","October","November","December"];
+            var curtime= new Date();
+            var month = curtime.getMonth();
+            var day = curtime.getDate();
+            var year= curtime.getFullYear(); 
+            let hours = curtime.getHours();
+            let minutes = curtime.getMinutes();
+
+            return(`${day} ${months[month]} ${year}`)
+        }
+        const gettime=()=>{
+            let  d = new Date(); // for now
+            console.log(d);
+            let hours=d.getHours(); // => 9
+            let minutes=d.getMinutes(); // =>  30
+            let seconds=d.getSeconds(); // => 51
+            if(minutes<10){
+                minutes= "0"+minutes
+            }
+            if(hours<10){
+                hours= "0"+hours
+            }
+            if(seconds<10){
+                seconds= "0"+seconds
+            }
+
+            let period = "AM";
+            if(hours > 11){
+                periods = "PM";
+                if(hours>12) hours -=12;
+            }
+        
+            return(`${hours}:${minutes}:${seconds} ${period}`)
+        }
+         
+        currday.textContent=getday();
+        curdate.textContent=getmonth();
+        curtime.textContent=gettime();
+    </script>
+</body>
+</html>
